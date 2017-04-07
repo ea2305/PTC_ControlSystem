@@ -1,2 +1,72 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Cabin|Catamaran:300,400');
+$sizes : ('small','med','full');
+/*Configuraciones del DOM*/
+html,body{ margin : 0px; }
 
+/* Tipo grafias */
+	h1,h2,h3,h4,h5,h6{
+		font-family: 'Cabin', sans-serif;
+	}
+
+	p,span,input,textarea,button{
+		font-family: 'Catamaran', sans-serif;
+	}
+
+	.cabin{
+		font-family: 'Cabin', sans-serif !important;
+	}
+
+	.catamaran{
+		font-family: 'Catamaran', sans-serif;
+	}
+/* Final de tipografias */
+
+/* Frames rules */
+
+	.custom-height{
+		min-height: 100vh;
+	}
+	.sm-img{
+		height : 17em;
+	}
+
+	.m-img{
+		height : 13em;
+	}
+
+	.mm-img{
+		height : 7em;
+	}
+
+	.s-img{
+		height : 2em;
+	}
+
+	.title-text{
+		font-size : .7em;
+	}
+
+	@for $i from 1 through length($sizes) {
+    	$s: nth($sizes, $i);
+    	.height-#{$s} {
+    		height : ( 100vh / length($sizes) ) * ($i);
+    	}
+	}
+/* End frames rules */
+
+/* Containers */
+	.flex{
+		display : inline-flex !important;
+	}
+/* End Containers */
+
+/* Util */
+	.frame{
+	    margin: 3rem 0em !important;
+	}
+
+	.pointer{
+		cursor : pointer;
+	}
+/* End util */

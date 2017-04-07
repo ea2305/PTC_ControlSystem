@@ -1,0 +1,22 @@
+html, body {
+  overflow-y: hidden !important; }
+
+.classroom {
+  height: 100vh !important;
+  background-image: url("../images/backgrounds/classroom.jpg");
+  background-repeat: no-repeat;
+  background-attachment: auto;
+  background-size: cover;
+  background-position: center; }
+
+/*Responsive fix*/
+@media only screen and (min-device-width: 100px) and (max-device-width: 1024px) {
+  html, body {
+    overflow-y: auto !important; }
+  .classroom {
+    height: auto !important;
+    background-image: url("../images/backgrounds/classroom.jpg");
+    background-size: cover;
+    background-position: center; } }
+
+/*# sourceMappingURL=login.css.map */

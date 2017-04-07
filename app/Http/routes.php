@@ -11,6 +11,19 @@
 |
 */
 
+//Inicio de la aplicación, Acceso de usuarios
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Inicio de sesión
+Route::post('/home' , [
+	'as' => 'access',
+	'uses'=> 'LoginController@access'
+]);
+
+//Control de perfiles de usuarios: PTC, Alumno, etc.
+Route::get('/profile' , [
+	'as' => 'profile',
+	'uses'=> 'ProfileController@show'
+]);

@@ -1,45 +1,55 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('templates.login')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('title' , 'Home')
+@section('header')
+    <link rel="stylesheet" href="css/login.css">
+@endsection
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+@section('body')
+    <div class="row classroom">
+        <div class="col m12 l12 s12">
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+            <div class="card col s12 m6 l6 push-m6 push-l6 frame">
+                
+                <div class="card-title">
+                    <br>
+                    <div class="center col m10 l10 s12 push-l1 push-m1">
+                        <img src="images/system/book-open-flat.png" alt="book" class="mm-img">
+                        <h4 class="center">Iniciar sessión</h4>
+                        <p>Ingrese sus datos para iniciar sessión</p>
+                    </div>
+                    
+                </div>
+                {!! Form::open(['url' => '/home' , 'method' => 'POST']) !!}
+                    
+                    <div class="col s12 m10 l10 push-m1 push-l1">
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+                        <div class="input-field">
+                            {!! Form::text('username','12345',['class' => 'validate']); !!}
+                            <label for="username">Ingrese el código de usuario</label>
+                        </div>
 
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+                        <div class="input-field">
+                            {!! Form::password('password', ['class' => 'validate']); !!}
+
+                            <label for="password">Ingrese la contraseña del usuario</label>
+                        </div>
+                        
+
+                        <div class="card-action">
+                            <button class="btn waves-effect waves-light red accent-3 center" type="submit" name="action">
+                                Entrar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+
+                    </div>
+                {!! Form::close() !!}
+
             </div>
+
         </div>
-    </body>
-</html>
+    </div>
+@endsection
+
